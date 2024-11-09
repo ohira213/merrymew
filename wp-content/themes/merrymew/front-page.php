@@ -24,7 +24,7 @@
                   <a href="https://lin.ee/NMihbEU" class="cmn-btn_line">
                       <div class="button-content">
                           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aicon_line.svg" alt="">
-                          友だち追加
+                          キャリア<br>相談受付
                       </div>
                   </a>
                 </li>
@@ -62,7 +62,7 @@
 
         <section id="flow" class="cmn-inner">
             <div class="flow_in">
-                <h2><span>Flow</span>ご利用方法a</h2>
+                <h2><span>Flow</span>ご利用方法</h2>
                 <div class="flow_list">
                     <div class="flow_list_item">
                         <span>
@@ -74,7 +74,7 @@
                     <div class="flow_list_item">
                         <span>
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aicon_flow02.svg" alt="">
-                            <h3><span class="tablet">リスキリング<br class="tablet">事業の</span><br>説明/同意</h3>
+                            <h3><span class="tablet sp">リスキリング<br class="tablet">事業の</span><br>説明/同意</h3>
                         </span>
                         <p>本サービスに関する説明動画をご確認いただき、本登録を行っていただきます。<br>
                             登録完了後、キャリアサポーターとのオンライン面談の日程を調整します。</p>
@@ -98,7 +98,7 @@
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aicon_flow05.svg" alt="">
                             <h3>転職先の<br class="tablet">ご紹介と<br class="tablet">支援</h3>
                         </span>
-                        <p>強みの分析から適職探し、応募書類の添削、面接練習もサポート。<br> 選考日程の調整や給与交渉も代行します。</p>
+                        <p>強みの分析から適職探し、応募書類の添削、面接練習もサポート。<br> 選考日程の調整や給与交渉も代行します。<br><span>※フォローアップとして、転職1年経過後に就業状況に関するヒアリングにご協力をお願いしています。</span></p>
                     </div>
                 </div>
             </div>

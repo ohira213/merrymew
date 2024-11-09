@@ -52,7 +52,7 @@
                 <a href="https://lin.ee/NMihbEU" class="cmn-btn_line">
                     <div class="button-content">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aicon_line.svg" alt="">
-                        友だち追加
+                        キャリア相談受付
                     </div>
                 </a>
             </li>
@@ -63,7 +63,7 @@
         <a href="https://lin.ee/NMihbEU" class="cmn-btn_line">
             <div class="button-content">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aicon_line.svg" alt="">
-                友だち追加
+                キャリア相談受付
             </div>
         </a>
     </div>

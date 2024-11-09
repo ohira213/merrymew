@@ -8,7 +8,7 @@
                 <a href="https://lin.ee/NMihbEU" class="cmn-btn_line pc">
                     <div class="button-content">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aicon_line.svg" alt="">
-                        友だち追加
+                        キャリア相談受付
                     </div>
                 </a>
             </div>
@@ -33,6 +33,9 @@
         </nav>
         <div class="info">
             <p>Copyright©︎,2024 MerryMew.All Rights Reserved.</p>
+        </div>
+        <div class="info_bottom">
+            <p>© BCC株式会社. All Rights Reserved.</p>
         </div>
     </div>
 </footer>
