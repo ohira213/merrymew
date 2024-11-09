@@ -1,0 +1,1319 @@
+$accent-color:#EF9CBF;
+$base-color:#666666;
+
+$primary-font: "Source Han Sans JP",  "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Meiryo", sans-serif;
+$secondary-font: "Helvetica Neue", Arial, sans-serif;
+
+.pc {
+	display: none !important;
+}
+
+body {
+	font-size: 3.73vw;
+	height: 100%;
+	font-family: $primary-font;
+	background-image: url('../img/bg.png'); /* 画像のパス */
+    background-repeat: repeat; /* リピート表示 */
+    width: 100%;
+    height:100%; /* 背景を表示するための高さ */
+	position: relative;
+	background-size: contain;
+	&.modal-open {
+		overflow: hidden;
+	}
+}
+
+.w100p {
+	width: 100%;
+	height: auto;
+}
+
+.uppercase-text {
+	text-transform: uppercase;
+  }
+
+p{font-size: 4.8vw;}
+
+.cmn-inner{
+	padding-right:8vw;
+	padding-left:8vw;
+}
+
+.cmn-btn_line {
+    display: grid; // グリッドレイアウトを使用
+    text-decoration: none; // 下線を消す
+    background-color: #8FD378; // 背景色
+    color: #ffffff; // テキスト色
+    padding: 2.4vw 4vw; // 内側の余白
+    width: 40vw; // ボタンの幅
+    border-radius: 100vmax; // 丸いボタンにする
+    transition: background-color 0.3s; // ホバー時の背景色変化にアニメーションを追加
+    font-size: 4vw; // フォントサイズ
+    font-weight: bold; // フォントの太さ
+    align-items: center; // 縦方向を中央揃え
+    justify-content: center; // 水平方向を中央揃え
+
+    .button-content {
+        display: grid; // グリッドレイアウトを使用
+        grid-template-columns: auto 1fr; // 画像とテキストのカラムを設定
+        align-items: center; // 縦方向を中央揃え
+        width: 100%; // ボックスの幅を100%に設定
+        text-align: center; // テキストを中央揃え
+    }
+
+    img {
+        width: 8vw; // 画像の幅を指定
+        height: auto; // 高さは自動
+        margin-right: 2.133vw; // 画像とテキストの間のマージン
+    }
+
+    &:hover {
+        opacity: 0.8;
+		color: #ffffff;
+
+    }
+}
+
+
+.cmn-btn01{
+	width: 33.067vw; // 幅を100%に変更
+	height: 1.875vw; // アイテムの高さ
+	border-radius: 1.667vw;
+	display: grid;
+	grid-template-columns: 1fr auto; // 左側がテキスト、右側が画像
+	align-items: center; // 縦中央揃え
+	color: $accent-color;
+	font-size: clamp(12px, 0.833vw, 16px);;
+	font-weight: normal;
+	letter-spacing: 0.1em;
+	justify-content: space-between; // テキストと画像を左右に配置
+	span {
+		display: block;
+
+		img {
+			width: 6.667vw;
+			height: 6.667vw;
+		}
+	}
+}
+
+.cmn-bg_txt{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	z-index: -10;
+	img{
+		width: 89.333vw;
+		height: 94.667vw;
+		opacity: 0.8;
+		animation-name: rotate;
+		animation-duration: 120s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		animation-fill-mode: both;
+	}
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+header {
+	position: sticky;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 99;
+	background-color: #ffffff;
+	padding:2.4vw 4.267vw;
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	.header_logo{
+		display: flex;
+
+		h1 {
+			width: 23.271vw;
+			max-width: 35.733vw;
+			img{
+				width: 100%;
+			}
+			margin-left: 2.667vw;
+		}
+	}
+	.cmn-btn_line_wrap{
+		display: block;
+	}
+	.hamburger-menu {
+		display: none;
+		cursor: pointer;
+		span {
+			display: block;
+			width: 6.933vw;
+			height: 0.8vw;
+			background-color:$accent-color;
+			margin: 1.6vw 0;
+			transition: 0.4s;
+		}
+	}
+	
+	
+	.mobile-nav-overlay {
+		display: none;
+		position: fixed;
+		top: 16.373vw;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(255, 255, 255, 0.8);
+		z-index: 98;
+	}
+	
+	.mobile-nav {
+		position: fixed;
+		top: 16.373vw;
+		left: 0;
+		width: 84.533vw;
+		height: 100%;
+		background-color: #fff;
+		display: flex;
+		justify-content: center;
+		padding: 18.133vw 8.533vw 0 8.533vw;
+		transform: translateX(-100%);
+		transition: transform 0.3s ease;
+		z-index: 99;
+	
+		ul {
+			list-style: none;
+			padding: 0;
+			width: 66.667vw;
+			li {
+				border-bottom: 1px solid $base-color;
+				margin-bottom: 2.667vw;
+				&:last-child{
+					border-bottom: none;
+					margin-top: 16vw;
+					a{
+						color: #ffffff;
+						width: 65.067vw;
+						font-size: 4.8vw;
+						.button-content{
+							width: unset;
+							img{
+								width: 11.467vw;
+								margin-right: 3.2vw;
+							}
+						}
+					}
+				}
+				a {
+					text-decoration: none;
+					color: $base-color;
+					font-size: 2.933vw;
+					display: flex;
+					padding: 5.6vw 0;
+					text-align: left;
+					span:first-child {
+						font-weight: bold;
+						font-size: 4.8vw;
+						letter-spacing: 0.2em;
+						font-family: $secondary-font;
+						width: 34.133vw;
+					}
+					span:last-child{
+						width: 2.933vw;
+						margin: 0 0 0 auto;
+					}
+				}
+			}
+		}
+		
+		.close-btn {
+			position: absolute;
+			top: 5.333vw;
+			right: 5.333vw;
+			font-size:5.067vw;
+			background: none;
+			color: $accent-color;
+			border: 1px solid $accent-color;
+			border-radius: 50%;
+			padding: 1.333vw 2.667vw;
+			cursor: pointer;
+		}
+	}
+	
+	@media (max-width: 768px) {
+		.hamburger-menu {
+			display: block;
+		}
+		.mobile-nav.open {
+			transform: translateX(0);
+		}
+		nav {
+			display: none;
+		}
+	}
+  }
+
+
+  footer{
+	width: 94.531vw;
+	background-color: #ffffff;
+	position: relative;
+	padding: 29.333vw 0 10.667vw;
+	border-radius:0 40vw 0 0;
+	.cmn-bg_txt{
+		position: absolute;
+		top:-20%;
+		right:-20%;
+	}
+	.footer_in{
+		width: 100%;
+		margin: 0 auto;
+		padding:0 17.6vw 0 8vw;
+		.txt-box{
+			margin-bottom: 8vw;
+			&_top{
+				padding-bottom: 13.333vw;
+				border-bottom: 1px solid $base-color;
+				margin-bottom: 8vw;
+				.logo{
+					width: 28.271vw;
+					img{
+						width: 100%;
+					}
+				}
+			}
+			&_bottom{
+				.picup-txt{
+					color:$base-color;
+					font-size: 3.467vw;
+					font-weight: bold;
+					letter-spacing:0.15em;
+					line-height: 1.5;
+				}
+				.txt-box{
+					margin-top: 10.4vw;
+					img{
+						width: 29.6vw;
+					}
+					p{
+						width: 100%;
+						color:$base-color;
+						font-size: 2.667vw;
+						font-weight: normal;
+						letter-spacing:0.1em;
+						line-height: 2;
+						margin-top: 2.667vw;
+						a{
+							color: $accent-color;
+							font-weight: bold;
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+		nav {
+		    margin-top: 13.333vw;
+			ul {
+			  width: 100%;
+			  padding: 0;
+			  li {
+				white-space: nowrap;
+			
+				a {
+				  display: inline-block;
+				  text-decoration: none;
+				  color: #919191;
+				  font-size: 3.733vw;
+				  padding: 1.6vw 0;
+				  margin:0.533vw 0;
+				  &:hover{
+					opacity: 0.8;
+				  }
+				}
+			  }
+			}
+		}
+		.info{
+			position:absolute;
+			top:50%;
+			right: -46%;
+			transform: rotate(90deg);
+			p{
+				font-size:4vw;
+				font-weight: normal;
+				letter-spacing:0.1em;
+				line-height: 1.5;
+				color: #919191;
+				font-family: $secondary-font;
+				white-space: nowrap;
+			}
+		}
+	}
+  }
+
+  @media (any-hover: hover) {
+	header{
+		nav ul li a{
+			&:hover {
+				color: $accent-color;
+		
+				span {
+				  color:$accent-color;
+				}
+			  }
+		}
+	}
+  }
+
+main{
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	#kv {
+		position: relative;
+		width: 100%;
+		margin: 0 auto;
+		img {
+			width: 100%; // 画像を100%に設定
+			height: 100%; // 高さを100%に設定
+			object-fit: cover; // 画像をカバーする
+			object-position: center; // 中央に配置
+		}
+	}
+	.side-nav {
+		position: sticky;
+		width: 100%;
+		padding: 0 8vw;
+		margin-top: 4.267vw;
+		&_in{
+			ul {
+				.nav-bar{
+					width: 100%;
+					border-radius: 2.933vw;
+					overflow: hidden;
+					display: flex;
+					&:last-child{
+						margin-top: 2.133vw;
+						li:nth-child(2){
+							&::after{
+								content: none;
+							}
+						}
+						.cmn-btn_line{
+							width: 100%;
+							border-radius: unset;
+							padding: 3.733vw 1.333vw;
+							.button-content{
+								font-size: 3.2vw;
+								font-weight: bold;
+								img{
+									width: 5.6vw;
+									margin-right: unset;
+								}
+							}
+						}
+					}
+					li{
+						width: calc(100% / 3);
+						margin-bottom: 0.521vw;
+						background-color: $accent-color;
+						
+						a {
+							font-size:clamp(14px, 0.833vw, 16px);
+							font-weight: bold;
+							padding: 3.733vw 0; // 内側の余白
+							letter-spacing: 0.1em;
+							color: #ffffff;
+							width: 100%;
+							display: block;
+							text-align: center;
+							font-size: 3.467vw;
+
+						}
+						&:not(:last-child){
+							position: relative;
+							&::after{
+								position: absolute;
+								content: "";
+								width: 0.267vw;
+								height: 6.4vw;
+								background-color: #ffffff;
+								top: 50%;
+								right: 0;
+								transform: translateY(-50%);
+
+							}
+						}
+					}
+				}
+			}
+		}
+	}		
+	
+	.content-right{
+		// overflow: hidden;	
+		.content{
+			width: 100%;
+			&_top{
+				h2{
+					font-size: clamp(14px, 0.833vw, 16px);
+					color:$accent-color;
+					display: grid;
+					grid-auto-flow: column;
+					grid-auto-columns: auto;
+					justify-content: start;
+					align-items: center;
+					padding-bottom: 5.333vw;
+					span{
+						font-size:clamp(26px, 1.563vw, 30px);
+						text-transform: uppercase;
+						font-family: $secondary-font;
+						letter-spacing:0.2em;
+						white-space: nowrap;
+						padding-right:  5.333vw;
+					}
+				}
+				.picup-txt{
+					margin-top: 6.133vw;
+					color:$base-color;
+					font-size: 26px!important;
+					font-weight: bold!important;
+					line-height: 1.6!important;
+					padding:0 20px 26px 20px!important;
+				}
+				.txt-box{
+					p{
+						color:$base-color;
+						font-size: 4.267vw;
+						font-weight: normal;
+						letter-spacing:0.1em;
+						line-height: 2;
+						padding:0 5.333vw;
+					}
+				}
+			  }
+			  #features,#concept{
+				width: 100%;
+				margin: 0 auto;
+				.txt-box{
+					margin-top: 4.688vw;
+					width: 100%;
+				}
+				.img-box{
+					width: 100%;
+					position: relative;
+					padding-left: 0;  // 左側に46pxのスペースを作る
+					padding-top: 8vw;   // 上側に46pxのスペースを作る
+					&::after {
+					  content: '';
+					  position: absolute;
+					  top:0;
+					  left: -8vw;
+					  width: 80.533vw;  // 指定された横幅
+					  height: 32vw; 
+					  background: linear-gradient(to right bottom, #FDC4DA, #FEF0CC);
+					  z-index: -1;  // 画像の下に配置
+					}
+					
+					img {
+					  display: block;
+					  width: 100%;
+					  height: auto;
+					  position: relative;  // z-indexを効かせるため
+					  z-index: 1;
+					}
+				}
+			}
+			#features{
+				padding: 25.6vw 8vw 43.2vw;
+				position: relative;
+				.cmn-bg_txt{
+					position: absolute;
+					too:-100%;
+					right:-10%;
+				}
+				.txt-box{
+					order: 2; /* Item 1 を後ろに配置 */
+					margin-right: 2.448vw;
+				}
+				.img-box{
+					order: 1; /* Item 2 を前に配置 */
+				}
+			}
+			#flow{
+				.flow_in{
+					width:100%;
+					background-color: #ffffff;
+					border-radius: 2.604vw;
+					padding: 13.867vw 5.333vw 17.333vw 5.333vw;
+					margin: 0 auto;
+				}
+				h2{
+					color: $base-color;
+					display: block;
+					text-align: center;
+				}
+				.flow_list{
+					margin-top: 1.927vw;
+					&_item{
+						width: 100%;
+						display: flex;
+						justify-content: space-between;
+						padding: 8.533vw 2.667vw 3.733vw;
+						position: relative;
+						border-bottom: dashed 1px #E5DEDE;
+						&:before{
+							content: "";
+							background-image: url('../img/aicon_arrow02.svg');
+							background-size: cover;
+							position: absolute;
+							width: 5.867vw;
+							height: 2.133vw;
+							left: 50%;
+							bottom:-12%;
+							transform: translateY(0%) translateX(-50%) rotate(90deg);
+							display: block;
+						}
+						& > span{
+							width: 34.667vw;
+						}
+						img{
+							width: 100%;
+						}
+						h3{
+							color:$accent-color;
+							font-size: 4.267vw;
+							font-weight: bold;
+							letter-spacing:0.1em;
+							line-height: 1.5;
+							text-align: center;
+							margin: 4px auto 0;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							span{
+							font-size:3.2vw;
+							display: contents;
+							}
+							}
+						p{
+							width: 32vw;
+							color:$base-color;
+							font-size: 3.467vw;
+							font-weight: normal;
+							letter-spacing:0.1em;
+							line-height: 2;
+						}
+						&:first-child{
+							padding-top: 0;
+						}
+						&:last-child{
+							border-bottom: unset;
+							&::before{
+								content: unset;
+							}
+						}
+						
+					}
+				}
+			}
+			#concept{
+				margin: 52.267vw 0 50.933vw;
+				.txt-box{
+					&_mid{
+						margin-top: 7.467vw;
+						padding:5.867vw;
+						border: 1px solid $base-color;
+						border-radius: 2.667vw;
+						h3{
+							color:$base-color;
+							font-size: 3.733vw;
+							font-weight: 500;
+							letter-spacing:0.1em;
+							padding-bottom:3.2vw;
+							& + p{
+								color:$base-color;
+								font-size: 3.2vw;
+								font-weight: normal;
+								letter-spacing:0.1em;
+								padding: 0;
+								span{
+									color: $accent-color;
+								}
+							}
+						}
+					}
+				}
+				.img-box{
+					&::after {
+					  right: -8vw;
+					  left: unset;
+					}
+				}
+			}
+			#courses{
+				position: relative;
+				&::before {
+					content: 'SUPPORT SUPPORT SUPPORT';
+					white-space: nowrap;
+					position: absolute; /* 絶対位置を指定 */
+					top: 38%; /* 上からの位置 */
+					left: -10%; /* 左からの位置 */
+					color: rgba(255, 255, 255, 0.70); /* 文字色 */
+					font-size: clamp(160px, 9.375vw, 180px);
+					font-family: $secondary-font;
+					font-weight: bold;
+					z-index: -99;
+				}
+				.txt-box{
+					text-align: center;
+					h2{
+						display: block;
+					}
+				}
+				.courses_list_wrap{
+					position: relative;
+					overflow-x: scroll;
+					margin-left: 8vw;
+					padding-bottom: 5vw;
+					-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+					background-color: rgba(255, 255, 255, 0.85);
+					padding:8vw 5.333vw;
+					border-radius: 8.533vw 0 0 8.533vw;
+					border-bottom:solid  rgba(255, 255, 255, 0.85) 30px;
+					margin-top: 9.333vw;
+					&::-webkit-scrollbar {
+						width: 2.667vw; /* スクロールバーの幅 */
+						height: 3.2vw; /* スクロールバーの高さ */
+					}
+					
+					/* スクロールバーの背景部分をカスタマイズ */
+					&::-webkit-scrollbar-track {
+						background: #EFEFEF; /* スクロールバーの背景色 */
+						border-radius: 1.333vw; /* 角丸にする */
+						margin-left: 5.333vw;
+					}
+					
+					/* スクロールバーの操作部分をカスタマイズ */
+					&::-webkit-scrollbar-thumb {
+						background:$accent-color; /* スクロールバーの操作部分の背景色 */
+						border-radius: 1.333vw; /* 角丸にする */
+					}
+					
+					/* スクロールバーの操作部分にホバーした時のスタイル */
+					&::-webkit-scrollbar-thumb:hover {
+						background: $accent-color; /* ホバー時のスクロールバーの操作部分の背景色 */
+					}
+				}
+				.courses_list {
+					position: relative;
+					min-width: 100%;
+					width: 150.4vw;
+					overflow-x: scroll;
+					white-space: nowrap;
+					ul {
+						display: grid;
+						grid-template-columns: repeat(3, 1fr); // 3つのカラムを設定
+						gap: 0.729vw 2.031vw;
+						overflow-x: scroll;
+						white-space: nowrap;
+						.courses_item {
+							white-space: nowrap;
+							margin-top: 5.333vw;
+							&_in {
+								width: 43.733vw; // 幅を100%に変更
+								height: 12.267vw; // アイテムの高さ¥
+								background-color: #ffffff;
+								border: 1px solid $accent-color;
+								white-space: normal;
+								border-radius: 3.733vw;
+								display: grid;
+								grid-template-columns: 1fr auto; // 左側がテキスト、右側が画像
+								align-items: center; // 縦中央揃え
+								padding: 0 2.667vw 0 5.333vw; // 左右のパディング
+								color: $base-color;
+								font-size: 2.933vw;
+								font-weight: normal;
+								letter-spacing: 0.1em;
+								line-height: 1.5;
+								justify-content: space-between; // テキストと画像を左右に配置
+				
+								span {
+									display: block;
+				
+									img {
+										width: 5.333vw;
+										height: 5.333vw;
+									}
+								}
+							}
+						}
+					}
+				}				
+			}
+			#support{
+				position: relative;
+				margin: 188px auto 200px;
+				width: 100%;
+				&::before {
+					content: 'SUPPORT';
+					position: absolute; /* 絶対位置を指定 */
+					top: -15%; /* 上からの位置 */
+					left: -10%; /* 左からの位置 */
+					color: rgba(255, 255, 255, 0.70); /* 文字色 */
+					font-size: clamp(160px, 9.375vw, 180px);
+					font-family: $secondary-font;
+					font-weight: bold;
+					z-index: -99;
+				}
+				.txt-box{
+					width: 100%;
+					padding:0 5.333vw;
+					p{
+						margin-top: 8vw;
+					}
+				}
+				.img-box{
+					width: 100%;
+					img{
+						width: 100%;
+					}
+				}
+			}
+			#trial{
+				margin: 0 auto;
+				width: 67.542vw;
+				max-width: 325.333vw;
+				position: relative;
+				.cmn-bg_txt{
+					position: absolute;
+					bottom:-80%;
+					left:-30%;
+				}
+				.trial_list{
+					display: flex;
+        			justify-content: space-between;
+					&_item {
+						width: 21.792vw;
+						max-width: 101.333vw;
+						background-color: #ffffff;
+						height: 30.438vw;
+						max-height: 128vw;
+						display: block;
+						border-radius: 0.833vw;
+						overflow: hidden;
+						position: relative;
+						z-index: -10;
+						.img-box {
+							width: 100%;
+							height: 14.896vw;
+							background-color: #ffffff;
+							position: relative;
+							z-index: -9; 
+							img{
+								width: 100%;
+								height: 100%;
+								object-fit: cover;
+								object-position: center;
+							}
+						}
+					
+						.txt-box {
+							width: 17.667vw;
+							padding: 0.521vw 1.667vw 0 1.042vw;
+							background-color: #ffffff;
+							border-radius: 0 0.833vw 0 0;
+							position: relative;
+							top: -2.083vw;
+					
+							&::after {
+								content: '';
+								position: absolute;
+								top: -0.208vw;
+								left: 0;
+								width: 100%;
+								height: 100%;
+								border-radius: 0 0.833vw 0 0;
+								background: linear-gradient(to right bottom, #FDC4DA, #FEF0CC);
+								z-index: -1; // `.txt-box` の背景レイヤーに回す
+							}
+					
+							h3 {
+								color: $base-color;
+								font-size: clamp(16px, 0.938vw, 18px);
+								font-weight: 400;
+								letter-spacing: 0.1em;
+								padding-bottom: 0.521vw;
+								line-height: 1.5;
+					
+								& + p {
+									color: $base-color;
+									font-size: clamp(12px, 0.677vw, 13px);
+									font-weight: 400;
+									letter-spacing: 0.1em;
+									line-height: 1.5;
+								}
+							}
+						}
+						.btn-box{
+							margin: 0 0 0 auto;
+							width: 8.229vw+1.563vw;
+							.cmn-btn01{
+								margin-right: 1.563vw;
+							}
+						}
+					}
+							
+				}			
+					
+			}
+			#qa {
+				width: 100%;
+				margin: 0 auto 180px;
+				.accordion {
+					&-item {
+						margin-bottom: 8.8vw;
+						&:first-child{
+							.icon {
+								&::before {
+									left: -80%; // 初期位置
+								}
+							}
+						}
+					}
+					.point-txt{
+						font-size:5.867vw;
+						color: $accent-color;
+						text-transform: uppercase;
+						font-family: $secondary-font;
+					}
+			
+					&-header {
+						background-color: #FEE6D0;
+						border-radius: 3.467vw;
+						padding:3.733vw 5.333vw 3.733vw 5.333vw;
+						cursor: pointer;
+						color: $base-color;
+						font-size: 4.267vw;
+						line-height: 1.5;
+						font-weight: 400;
+						letter-spacing: 0.1em;
+						display: flex;
+						align-items: center; // アイコンとテキストを縦中央揃え
+						justify-content: space-between;
+						position: relative; // 親要素を相対位置に設定
+						width: 100%;
+			
+						.icon {
+							width:4.267vw; // アイコンの幅
+							height: 4.267vw;// アイコンの高さ
+							margin-left: auto; // アイコンを右端に配置
+							margin-right: 0.521vw; // アイコンとテキストの間のスペース
+							position: relative;
+			
+							// プラスアイコンの棒
+							&::before {
+								content: '';
+								width: 4.267vw; // 横の棒の幅
+								height: 0.267vw; // 横の棒の高さ
+								background: $accent-color; 
+								position: absolute;
+								top: 50%; // 縦中央
+								left: 0; // 初期位置
+								transition: transform 0.5s ease, opacity 0.5s ease; // アニメーションをなめらかに
+							}
+			
+							// プラスアイコンの縦棒
+							&::after {
+								content: '';
+								width: 0.267vw; // 縦の棒の幅
+								height: 4.267vw; // 縦の棒の高さ
+								background: $accent-color;
+								position: absolute;
+								top: 0; // 上端
+								left: 50%; // 横位置
+								transition: transform 0.5s ease, opacity 0.5s ease; // アニメーションをなめらかに
+							}
+						}
+			
+						&.active {
+			
+							.icon {
+								&::before {
+									opacity: 0; // 縦の棒を非表示
+								}
+			
+								&::after {
+									
+									transform: rotate(90deg); // 上の棒を45度回転
+								}
+							}
+							& + .accordion-content{
+								background-color: #ffffff;
+								border-radius: 0 0 3.733vw 3.733vw; // 左上と右上は0、左下と右下は10px
+								padding: 20px 1.406vw 20px 20px;
+								margin-top: -0.365vw;
+							}
+						}
+					}
+			
+					&-content {
+						padding: 0;
+						max-height: 0;
+						overflow: hidden;
+						transition: max-height 0.2s ease-out;
+						display: grid;
+						grid-template-columns: auto 1fr;
+						.point-txt{
+							margin-top: 0.521vw;
+						}
+						p + p{
+							margin-left: 0.521vw;
+							width: 70.133vw;
+							color: $base-color;
+							font-size: clamp(14px, 0.833vw, 16px);
+							font-weight: 400;
+							letter-spacing: 0.1em;
+							line-height: 2;
+						}
+					}
+				}
+				.txt-hide {
+					display: none;
+				}
+		
+				button.cmn-btn-more {
+					width: 65%;
+					margin: 50px auto 0;
+					display: flex; // Flexboxを使用して縦中央揃えを簡単に
+					align-items: center; // アイコンとテキストを中央揃え
+					color: $accent-color;
+					font-size: clamp(14px, 0.833vw, 16px);
+					border: none;
+					outline: 0;
+					transition: 0.1s;
+					-webkit-transition: 0.1s;
+		
+					&:hover {
+						cursor: pointer;
+						opacity: 0.8;
+					}
+		
+					.icon {
+						width: 9.6vw;
+						height: 9.6vw;
+						background-color: $accent-color;
+						border-radius: 100vmax;
+						display: flex; // Flexboxを使用
+						justify-content: center; // 中央揃え
+						align-items: center; // 中央揃え
+						margin-left: auto;
+						margin-right: 0.521vw;
+						position: relative;
+		
+						&::before {
+							content: '';
+							width: 3.733vw;
+							height: 0.267vw;
+							background: #ffffff; 
+							position: absolute;
+							top: 50%;  
+							left: 50%; 
+							transform: translate(-50%, -50%);
+							transition: transform 0.5s ease, opacity 0.5s ease;
+						}
+		
+						&::after {
+							content: '';
+							width:0.267vw;
+							height: 3.733vw;
+							background: #ffffff; 
+							position: absolute;
+							top: 50%; 
+							left: 50%; 
+							transform: translate(-50%, -50%);
+							transition: transform 0.5s ease, opacity 0.5s ease;
+						}
+					}
+				}
+		
+				button.cmn-btn-more.on-click {
+					.icon {
+						&::before {
+							opacity: 0; 
+						}
+		
+						&::after {
+							transform: rotate(90deg); 
+							top: 30%;
+						}
+					}
+				}
+		
+				button.cmn-btn-more::after {
+					content: "よくある質問をもっとみる";
+					transition: 0.05s;
+					-webkit-transition: 0.05s;
+					margin-left: 0.521vw; // アイコンとの間隔を調整
+				}
+		
+				button.cmn-btn-more.on-click::after {
+					content: "よくある質問を閉じる";
+				}
+		
+			}
+			#stories{
+				margin: 0 auto;
+				width: 100%;
+				position: relative;
+				overflow: visible;
+				padding: 47.467vw 0 33.333vw;
+				&::before {
+					content: 'STORIES';
+					position: absolute; /* 絶対位置を指定 */
+					bottom: 1.042vw; /* 上からの位置 */
+					left: -10%; /* 左からの位置 */
+					color: rgba(255, 255, 255, 0.70); /* 文字色 */
+					font-size: clamp(160px, 9.375vw, 180px);
+					font-family: $secondary-font;
+					font-weight: bold;
+					z-index: -99;
+				}
+				.stories_bg{
+					// width: 110.133vw;
+					// height: 93.229vw;
+					position:absolute;
+					top: 0;
+					left: 50%;
+					transform: translateX(-50%);
+					z-index: -9999999;
+				}
+				h2{
+					display: block;
+					text-align: center;
+					color: #ffffff;
+				}
+				.stories_list{
+					display: grid;
+					grid-template-columns: repeat(4, 1fr);
+					gap: 1.302vw;
+					justify-content: space-between;
+					margin:6.354vw 0 0;
+					.modal {
+						display: none; // 初期状態では非表示
+						position: fixed;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						background-color: rgba(0, 0, 0, 0.5);
+						align-items: center;
+						justify-content: center;
+						&.show { // モーダルが表示される状態
+							display: flex;
+							z-index: 999;
+						}
+					
+						.modal-content { // モーダルコンテンツのスタイル
+							position: relative;
+							width: 90%;
+							max-width: 52.083vw;
+							background-color: #fff;
+							padding: 0.26vw;
+							border-radius: 0.417vw;
+							text-align: center;
+					
+							img {
+								max-width: 100%;
+								height: auto;
+							}
+					
+							.close-btn { // 閉じるボタン
+								position: absolute;
+								top: 0.521vw;
+								right: 0.521vw;
+								font-size:clamp(18px, 1.25vw, 20px);
+								font-weight: bold;
+								color: #333;
+								cursor: pointer;
+					
+								&:hover { // ホバー時のスタイル
+									color: $accent-color;
+								}
+							}
+							.cmn-btn01{
+								position: absolute;
+								bottom: 1.563vw;
+								right: 2.604vw;
+							}
+						}
+					}
+					&_item {
+						width: 71.733vw;
+						height:120.267vw;
+						max-height: 152vw;
+						display: block;
+						border-radius: 4.267vw;
+						overflow: hidden;
+						cursor: pointer;
+						position: relative;
+						background-color: #ffffff;
+						z-index: 0;
+						&:hover{
+							opacity: 0.8;
+						}
+						.img-box {
+							width: 100%;
+							height: 79.733vw;
+							background-color: #ffffff;
+							position: relative;
+							z-index: -9; 
+							img{
+								width: 100%;
+								height: 100%;
+								object-fit: cover;
+								object-position: center;
+							}
+						}
+					
+						.txt-box {
+							width: 62.4vw;
+							padding: 4vw 4vw 0 4vw;
+							background-color: #ffffff;
+							border-radius: 0 4.267vw 0 0;
+							position: relative;
+							top: -2.083vw;
+					
+							&::after {
+								content: '';
+								position: absolute;
+								top: -1.067vw;
+								left: 0;
+								width: 100%;
+								height: 100%;
+								border-radius: 0 4.267vw 0 0;
+								background: linear-gradient(to right bottom, #FDC4DA, #FEF0CC);
+								z-index: -1; // `.txt-box` の背景レイヤーに回す
+							}
+					
+							h3 {
+								color: $base-color;
+								font-size: clamp(16px, 0.938vw, 18px);
+								font-weight: 400;
+								letter-spacing: 0.1em;
+								padding-bottom: 0.521vw;
+								line-height: 1.5;
+							}
+						}
+						.btn-box{
+							margin: 0 0 0 auto;
+							width: 36.907vw;
+							.cmn-btn01{
+								margin-right: 1.563vw;
+							}
+						}
+					}
+						
+				}	
+				.notes-txt{
+					color: $base-color;
+					font-size: clamp(12px, 0.625vw, 12px);
+					font-weight: normal;
+					letter-spacing: 0.1em;
+					line-height: 1.5;
+					text-align: right;
+					margin-top: 1.563vw;
+					margin-right: 8vw;
+				}		
+					
+			}
+	  }
+	}
+
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 4.8vw;
+    background: #fff;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:100px!important;
+}
+
+.swiper-pagination-bullet-active{
+	color: $accent-color!important;
+	background:var(--$accent-color,var(--$accent-color));
+}
+
+.modal {
+	display: none; // 初期状態では非表示
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	align-items: center;
+	justify-content: center;
+	z-index: 9999999;
+	&.show { // モーダルが表示される状態
+		display: flex;
+		z-index: 999;
+	}
+
+	.modal-content { // モーダルコンテンツのスタイル
+		position: relative;
+		width: 90%;
+		background-color: #fff;
+		padding: 2.667vw;
+		border-radius: 4.267vw;
+		text-align: center;
+		margin: auto;
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		.close-btn { // 閉じるボタン
+			position: absolute;
+			top: 2.667vw;
+			right:2.667vw;
+			font-size:clamp(18px, 1.25vw, 20px);
+			font-weight: bold;
+			color: #333;
+			cursor: pointer;
+
+			&:hover { // ホバー時のスタイル
+				color: $accent-color;
+			}
+		}
+		.cmn-btn01{
+			position: absolute;
+			bottom: 7vw;
+			right: 2.604vw;
+		}
+	}
+}
+
+.swiper-button-next, .swiper-button-prev{
+	color: $accent-color!important;
+}
+
+
+
