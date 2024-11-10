@@ -94,8 +94,8 @@ p{font-size: 18px;}
     align-items: center;
 	z-index: -10;
 	img{
-		width: 550px;
-		height: 550px;
+		width: 28.646vw;
+        height: 28.646vw;
 		opacity: 0.8;
 		animation-name: rotate;
 		animation-duration: 120s;
@@ -208,12 +208,13 @@ p{font-size: 18px;}
 }
 
 .logo_scroll{
-	padding: 0.521vw 0 0.521vw 2.344vw;
+	padding: 1.521vw 0 0.521vw 2.344vw;
 	position: fixed;
 	top: 0;
 	left: 0;
 	a{
-		width: 119px;
+		max-width: 200px;
+		width: 14vw;
         display: block;
 		img{
 			width: 100%;
@@ -292,7 +293,8 @@ header {
 		right:-20%;
 	}
 	.footer_in{
-		width: 56.042vw;
+		width: 100%;
+		max-width: 1070px;
 		margin: 0 auto;
 		.txt-box{
 			margin-bottom: 3.854vw;
@@ -381,15 +383,15 @@ header {
 		.info{
 			position:absolute;
 			top:50%;
-			right: -2%;
-			transform: rotate(90deg);
+			right: -6vw;
 			p{
-				font-size: clamp(12px, 0.625vw, 12px);
+				font-size: clamp(10px, 0.625vw, 12px);
 				font-weight: normal;
 				letter-spacing:0.1em;
 				line-height: 1.5;
 				color: #919191;
 				font-family: $secondary-font;
+				transform: rotate(90deg);
 			}
 			&_bottom{
 				p{
@@ -418,6 +420,12 @@ header {
 	}
   }
 
+  @media(max-width:1000px){
+	footer .footer_in .info{
+		right: -10vw;
+	}
+  }
+
 main{
 	display: grid;
 	grid-template-columns: auto 1fr;
@@ -440,7 +448,7 @@ main{
         transition: top 0.3s ease;
 		&_in{
 			padding: 7.552vw 0 9.635vw;
-			width: 12.76vw;
+			width: 14.76vw;
 			margin: auto;
 			text-align: center;
 			p{
@@ -525,7 +533,7 @@ main{
 								}
 							}
 							.cmn-btn_line{
-								width: 11.979vw;
+								width: 14.6vw;
 								margin-top: 3.125vw;
 								img{
 									width: 2.188vw;
@@ -689,6 +697,11 @@ main{
 							font-weight: normal;
 							letter-spacing:0.1em;
 							line-height: 2;
+							span{
+								font-size: 10px;
+								line-height: 2;
+								display: block;
+							}
 						}
 						&:not(:last-child){
 							&:before{
@@ -712,6 +725,21 @@ main{
 							}
 						}
 						
+					}
+				}
+			}
+			.line-bnr{
+				padding:80px 0 0;
+				.img_wrap{
+					width: 90%;
+					margin: 0 auto;
+					max-width: 1200px;
+					display: block;
+					img{
+						width: 100%;
+					}
+					&:hover{
+						opacity: 0.8;
 					}
 				}
 			}
@@ -770,7 +798,7 @@ main{
 					}
 				}
 				.courses_list {
-					width: 63.542vw;
+					width: 100%;
 					max-width: 1220px;
 					margin:42px auto 0;
 					background-color: #ffffff;
@@ -785,7 +813,8 @@ main{
 						.courses_item {
 							&_in {
 								width: 100%; // 幅を100%に変更
-								height: 3.385vw; // アイテムの高さ
+								height: 3.9vw; // アイテムの高さ
+								max-height: 55px;
 								border: 1px solid $accent-color;
 								border-radius: 1.667vw;
 								display: grid;
@@ -1054,8 +1083,8 @@ main{
 					}
 		
 					.icon {
-						width: 1.875vw;
-						height: 1.875vw;
+						width: 31px;
+						height: 31px;
 						background-color: $accent-color;
 						border-radius: 100vmax;
 						display: flex; // Flexboxを使用
@@ -1141,6 +1170,9 @@ main{
 					left: 50%;
 					transform: translateX(-50%);
 					z-index: -9999999;
+					img{
+						width: 100%;
+					}
 				}
 				h2{
 					display: block;
@@ -1490,6 +1522,16 @@ main{
 					}
 				}
 			}
+			.single_txt_box__last{
+				p{
+				font-size: 16px;
+				color: #666666;
+				font-family: "Helvetica Neue", Arial, sans-serif;
+				letter-spacing: 0.15em;
+				line-height: 1.7;
+				text-align: right;
+				}
+			}
 		}
 	}
 }
@@ -1596,7 +1638,7 @@ main{
 			font-weight: bold;
 			max-width: 1040px;
 			width: 100%;
-			padding: 0 60px;
+			// padding: 0 60px;
 			margin: 7.813vw auto 0;
 		}
 	}

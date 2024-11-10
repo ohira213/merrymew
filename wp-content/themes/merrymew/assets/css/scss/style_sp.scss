@@ -482,6 +482,21 @@ header {
 	}
   }
 
+  .side-nav.fixed{
+	position: fixed;
+	width: 100%;
+	padding: 0 8vw;
+	top: 17.267vw;
+	z-index: 20;
+  }
+
+  main .side-nav_in ul .nav-bar{
+	width: 100%;
+	border-radius: 2.933vw;
+	overflow: hidden;
+	display: flex;
+  }
+
 main{
 	width: 100%;
 	margin: 0 auto;
@@ -519,7 +534,7 @@ main{
 						.cmn-btn_line{
 							width: 100%;
 							border-radius: unset;
-							padding:1.58vw 1.333vw;
+							padding:1.58vw 3.333vw;
 							.button-content{
 								font-size: 3vw;
 								font-weight: bold;
@@ -740,6 +755,21 @@ main{
 					}
 				}
 			}
+			.line-bnr{
+				padding:40px 0 0;
+				.img_wrap{
+					width: 85%;
+					margin: 0 auto;
+					max-width: 1200px;
+					display: block;
+					img{
+						width: 100%;
+					}
+					&:hover{
+						opacity: 0.8;
+					}
+				}
+			}
 			#concept{
 				margin: 52.267vw 0 50.933vw;
 				.txt-box{
@@ -892,7 +922,7 @@ main{
 				}
 				.txt-box{
 					width: 100%;
-					padding:0 5.333vw;
+					// padding:0 5.333vw;
 					p{
 						margin-top: 8vw;
 					}
@@ -1424,9 +1454,9 @@ main{
 						display: -webkit-box;
 						-webkit-box-orient: vertical;
 						overflow: hidden;
-						-webkit-line-clamp: 4;
+						-webkit-line-clamp: 3;
 						line-height: 1.5;
-						max-height: calc(1.5em* 4);
+						max-height: calc(1.5em* 3);
 					}
 					&::before{
 						content: "";
@@ -1588,6 +1618,16 @@ main{
 					}
 				}
 			}
+			.single_txt_box__last{
+					p{
+					font-size: 16px;
+					color: #666666;
+					font-family: "Helvetica Neue", Arial, sans-serif;
+					letter-spacing: 0.15em;
+					line-height: 1.7;
+					text-align: right;
+				}
+			}
 		}
 	}
 }
@@ -1651,6 +1691,13 @@ main{
 					letter-spacing: 0.1em;
 					padding-bottom: 0.521vw;
 					line-height: 1.5;
+					white-space: normal;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+					-webkit-line-clamp: 5;
+					line-height: 1.5;
+					max-height: calc(1.5em* 5);
 				}
 				& + p{
 					font-size: 14px;
@@ -1678,7 +1725,7 @@ main{
 			line-height: 1.7;
 			font-weight: bold;
 			width: 100%;
-			margin: 0 auto;
+			margin: 16px auto 0;
 		}
 	}
 	.txt-box{

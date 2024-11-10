@@ -104,6 +104,13 @@
             </div>
         </section>
 
+        <section class="line-bnr">
+            <a href="https://lin.ee/NMihbEU" class="img_wrap">
+                <img class="pc" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_line-bnr_pc.png" alt="画像1">
+                <img class="sp" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_line-bnr_sp.png" alt="画像1">
+            </a>
+        </section>
+
         <section id="concept" class="cmn-inner">
             <div class="txt-box">
                 <h2><span>Concept</span>コンセプト</h2>
