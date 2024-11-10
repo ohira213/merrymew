@@ -1464,12 +1464,14 @@ main{
 					letter-spacing: 0.2em;
 					padding-bottom: 4px;
 					line-height: 1.5;
+					padding-bottom: 12px;
+					border-bottom: dashed 1px #666666;
+					margin-bottom: 6px;
 				}
 				div{
-					border-top: dashed 1px #666666;
 					display: flex;
 					justify-content: space-between;
-					padding-top: 12px;
+					margin-top: 12px;
 					p{
 						font-size: 14px;
 						color: #666666;

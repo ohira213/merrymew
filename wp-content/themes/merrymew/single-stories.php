@@ -33,24 +33,24 @@
 					<?php endwhile;
 				endif;
 				?>
-				<?php
+				                  <div class="txt-box_profile">
+                    <h3>PROFILE</h3>
+                    <?php
 				$profile = SCF::get('profile');
 				if (!empty($profile)) :
 					foreach ($profile as $val) :
 				?>
-				                  <div class="txt-box_profile">
-                    <h3>PROFILE</h3>
                     <div>
                         <p><?php echo esc_html($val['name']); ?></p>
                         <p><?php echo nl2br(esc_html($val['text'])); ?></p> <!-- 改行を反映 -->
                     </div>
-                </div>
-				<?php
+                    <?php
 					endforeach;
 				else :
 					echo '';
 				endif;
 				?>
+                </div>
 				<?php
 				$sample_text_loopgroup = SCF::get('sample_text_loopgroup');
 				if (!empty($sample_text_loopgroup)) :
